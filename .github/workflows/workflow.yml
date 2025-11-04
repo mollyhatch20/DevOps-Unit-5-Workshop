@@ -3,7 +3,10 @@ on: [push]
 
 jobs:
   build:
-    name: Build and tesst
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+
+    - name: Build the C# code
+      run: dotnet build
