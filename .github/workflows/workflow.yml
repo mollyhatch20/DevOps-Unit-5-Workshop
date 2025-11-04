@@ -5,6 +5,5 @@ jobs:
   build:
     name: Build and tesst
     runs-on: ubuntu-latest
-    step:
+    steps:
     - users: actions/checkout@v4
-    
