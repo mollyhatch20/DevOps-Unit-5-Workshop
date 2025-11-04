@@ -1,0 +1,19 @@
+# Here we specify what causes the pipeline to run; in this case changes to any branch
+trigger:
+- '*'
+
+# Here we specify what type of machine (agent) to run on
+pool: Default
+
+# And here we specify a list of "jobs"
+jobs:
+  - job: firstJob
+    displayName: "My first Job"
+    # Each job has a sequence of steps to run
+    steps:
+      - script: echo "Hello World"
+        displayName: Say Hello
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: echo "Hello World (again)"
