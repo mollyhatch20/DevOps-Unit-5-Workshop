@@ -15,10 +15,13 @@ jobs:
       run: dotnet test
 
     - name: Run Typescript code
+      working-directory: ./DotnetTemplate.Web
       run: npm run build
 
-    - name: Run the linter 
+    - name: Run the linter TypeScript
+      working-directory: ./DotnetTemplate.Web
       run: npm run lint
 
     - name: Run the TypeScript tests
+      working-directory: ./DotnetTemplate.Web
       run: npm t
