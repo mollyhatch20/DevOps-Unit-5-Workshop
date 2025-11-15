@@ -1,0 +1,25 @@
+name: Typescript workflow
+on: [workflow.yml]
+
+jobs:
+  build:
+    name: Build and test typescript
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run Typescript dependencies
+      working-directory: ./DotnetTemplate.Web
+      run: npm ci
+
+    - name: Run Typescript build
+      working-directory: ./DotnetTemplate.Web
+      run: npm run build
+
+    - name: Run the linter TypeScript
+      working-directory: ./DotnetTemplate.Web
+      run: npm run lint
+
+    - name: Run the TypeScript tests
+      working-directory: ./DotnetTemplate.Web
+      run: npm t
