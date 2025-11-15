@@ -1,9 +1,15 @@
-name: Typescript workflow
-on: [workflow.yml]
+name: CI Workshop
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
-    name: Build and test typescript
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
